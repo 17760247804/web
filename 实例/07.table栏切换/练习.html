@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			a{
+				text-decoration: none;
+				color: black;
+			}
+			.header{
+				width: 100%;
+				height: 60px;
+				background-color: palevioletred;
+			}
+			.header .header-first{
+				width: 1000px;
+				height: 60px;
+				margin: 0 auto;
+				background-color: yellow;
+			}
+			.header .header-first a{
+				float: left;
+				width: 200px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+			}
+			.header .header-first a.active{
+				color: white;
+			}
+			.header .header-first a:hover{
+				background-color: red;
+				color: white;
+			}
+	        .body{
+	        	width: 100%;
+	        	height: 300px;
+	        	background-color:palevioletred;
+	        }
+	        .body .item {
+				width: 100%;
+				height: 200px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="header">
+			<div class="header-first">
+				<a href="#" class="active">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+				<a href="#">首页</a>
+			</div>
+		</div>
+		<div class="body">
+			<div class="item" style="display: block;">1111111</div>
+			<div class="item">2222222</div>
+			<div class="item">333333333</div>
+			<div class="item">44444444</div>
+			<div class="item">55555555555</div>
+		</div>
+		
+		<script>
+			window.onload=function(){
+				var links = document.getElementsByTagName("a");
+				var items = document.getElementsByClassName("item");
+				for(i=0;i<links.length;i++){
+					(function(i){
+						links[i].onclick=function(){
+							for(j=0;j<links.length;j++){
+								links[j].className="";
+								items[j].style.display="none";
+							}
+							links[i].className = "active";
+							items[i].style.display = "block";
+						}
+					})(i)
+				}
+			}
+		</script>
+	</body>
+</html>

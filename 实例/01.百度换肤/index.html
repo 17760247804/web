@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			body {
+				background-image: url(static/img/1.jpg);
+			}
+			
+			.box {
+				width: 1000px;
+				height: 100px;
+				margin: 100px auto;
+			}
+			
+			img {
+				width: 200px;
+				height: 100px;
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<img src="static/img/1.jpg" />
+			<img src="static/img/2.jpg" />
+			<img src="static/img/3.jpg" />
+			<img src="static/img/4.jpg" />
+			<img src="static/img/5.jpg" />
+		</div>
+		<script>
+			window.onload = function() {
+				var img = document.getElementsByTagName("img");
+				img[0].onclick = function() {
+					document.body.style.backgroundImage = "url(static/img/1.jpg)";
+				}
+				img[1].onclick = function() {
+					document.body.style.backgroundImage = "url(static/img/2.jpg)";
+				}
+				img[2].onclick = function() {
+					document.body.style.backgroundImage = "url(static/img/3.jpg)";
+				}
+				img[3].onclick = function() {http://127.0.0.1:8020/js%e5%ad%a6%e4%b9%a0/js%e8%af%be%e5%a0%82/%e5%ae%9e%e4%be%8b/01.%e7%99%be%e5%ba%a6%e6%8d%a2%e8%82%a4/static/img/1.jpg
+					document.body.style.backgroundImage = "url(static/img/4.jpg)";
+				}
+				img[4].onclick = function() {
+					document.body.style.backgroundImage = "url(static/img/5.jpg)";
+				}
+			}
+
+			/*window.onload = function() {
+				var img = document.getElementsByTagName("img");
+				var body = document.getElementsByTagName("body")[0];
+				for(var i = 0; i < img.length; i++) {
+					(function(i) {
+						img[i].onclick = function(e) {
+							var imgurl = e.target.getAttribute("src");//接受点击图片的地址
+							body.style.backgroundImage = "url(" + imgurl + ")";
+						}
+					})(i)
+				}
+			}*/
+			
+		</script>
+	</body>
+
+</html>

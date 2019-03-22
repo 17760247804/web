@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+				top: 70px;
+				left: 8px;
+			}
+			
+			/*button:hover+.one {
+				left: 400px;
+				transition: left 3s linear;
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<button>点击</button>
+		<div class="one"></div>
+		
+	<script>
+		window.onload=function(){
+		var btn=document.getElementsByTagName("button")[0];
+		var div=document.getElementsByTagName("div")[0];
+		var num=0;
+		var target=500;
+		btn.onclick=function(){
+			setInterval(function(){
+				num=num+(target-num)/10;
+				div.style.left=num+"px";
+			},30)
+		}
+	}	
+		
+	</script>	
+	</body>
+
+</html>
